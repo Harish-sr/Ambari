@@ -1,15 +1,7 @@
 # HDP-multi-node-docker
 provisioning of a multi-node hadoop cluster using docker
 
-# known issues:
-* the ambari-agent on the master node cannot be named the same hostname as the host which is why the name is hardcoded in the ```start_containers.sh```
-as it will try to point to itself to find the ambari-server and therefore fail.
 
-### Required files in binaries folder :
-* ambari-2.1.2.1-centos6.tar.gz
-* HDP-2.3.2.0-centos6-rpm.tar.gz
-* HDP-UTILS-1.1.0.20-centos6.tar.gz
-* jdk-8u101-linux-x64.rpm
 
 # to run
 1. update hosts to reflect your setup. this file will be needed as part of the image build
