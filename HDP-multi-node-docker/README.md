@@ -1,19 +1,18 @@
 # HDP-multi-node-docker
 provisioning of a multi-node hadoop cluster using docker
 
-
-
-# to run
-1. update hosts to reflect your setup. this file will be needed as part of the image build
-2. choose and download your ambari and HDP versions the untar in the "binaries" directory
-3. (optional) to download directly from online hdp repo update the ambari.repo and hdp.repo file in both the amabri-server and amabri-agent template 
-folders.
-3. start the htpd docker service. update the start script in the dir "httpd" to reflect your setup.
-4. run ```build_images.sh```
-5. export and load agent image to all hosts in your cluster
-6. update the ambari-agent.init file to point to your ambari-agent host
-7. run ```start_containers.sh``` on master-node and ```start_agent.sh``` on all other hosts
-8. provision cluster with ambari via http://"master-node-host":8080. 
+# Steps to create\build the ambari master and agent docker files needed to build cluster
+1. Download and install git "yum install git" in the master node
+2. Navigate to the Ambari/HDP-multi-node-DOcker directory
+3. update hosts file to reflect the hosts that are used to setup. In the following locations HDP-multi-node-Docker, ambari-agent-template and ambari-server-template 
+4. check for ambari repo file in ambari-agent-template and ambari-server-template
+5. Generate the headless user keys rsa and rsa.pub using command "ssh-gen"
+6. copy the rsa and rsa.pub into the ambari-agent-template and ambari-server-template
+7. start the htpd docker service. Using command "systemctl start docker". check the status using "systemctl status docker"
+8. change the premissions of the script file to run using command "chmod 775 *.sh" under HDP-multi-node-Docker directory
+8. run ```build_images.sh``` under the Ambari/HDP-multi-node-Docker
+9. export and load agent image to all hosts in your cluster
+10. provision cluster with ambari via http://"master-node-host":8080. 
 
 ### Ambari Console:
 
