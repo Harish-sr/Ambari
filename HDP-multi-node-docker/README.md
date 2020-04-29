@@ -2,7 +2,9 @@
 provisioning of a multi-node hadoop cluster using docker
 
 # Steps to create\build the ambari master and agent docker files needed to build cluster
-1. Download and install git "yum install git" in the master node
+1. login to the master using root permission or "sudo su" to root
+2. Download and install git "yum install git" in the master node
+3. download the repository https://github.com/Harish-sr/Ambari using git clone https://github.com/Harish-sr/Ambari.git command
 2. Navigate to the Ambari/HDP-multi-node-DOcker directory
 3. update hosts file to reflect the hosts that are used to setup. In the following locations HDP-multi-node-Docker, ambari-agent-template and ambari-server-template 
 4. check for ambari repo file in ambari-agent-template and ambari-server-template
